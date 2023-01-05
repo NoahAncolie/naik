@@ -24,12 +24,12 @@ export class NaikLoader extends React.Component<
             <span className="naik_loader_K">K</span>
           </h1>
         </div>
-        <div className="naik_loader_colors_1">
+        {/* <div className="naik_loader_colors_1">
           <div className="naik_loader_color_1 naik_loader_color"></div>
           <div className="naik_loader_color_2 naik_loader_color"></div>
           <div className="naik_loader_color_3 naik_loader_color"></div>
           <div className="naik_loader_color_4 naik_loader_color"></div>
-        </div>
+        </div> */}
       </>
     );
   }

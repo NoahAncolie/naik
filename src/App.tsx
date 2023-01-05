@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import { Navbar } from "./components/fix/navigation/navbar";
+import { NaikloaderFrame } from "./components/reuseable/naik_loader/naik_loader_frame";
 import { Home } from "./routes/home/home";
 
 interface AppProps {}
@@ -28,6 +29,7 @@ export class App extends React.Component<AppProps, AppState> {
       <div className="App">
         <Navbar />
         <Home />
+        <NaikloaderFrame />
       </div>
     );
   }
