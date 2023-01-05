@@ -1,0 +1,180 @@
+header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  top: -52px;
+  overflow: hidden;
+}
+
+.navbar_title {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1px 0;
+}
+
+@media screen and (max-width: 900px) {
+  .navbar_container {
+    display: none;
+  }
+
+  .navbar_logo_lg {
+    display: none;
+  }
+
+  .navbar_logo_sm {
+    position: fixed;
+    left: 20px;
+    top: 30px;
+    transform: translateY(-50%);
+    display: flex;
+    z-index: 20;
+    mix-blend-mode: difference;
+    color: var(--light);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .navbar_container {
+    width: 100vw;
+    height: 80px;
+    background-color: var(--light);
+    top: 0;
+    color: var(--dark);
+    overflow: hidden;
+    top: 0;
+  }
+
+  .navbar_logo_lg {
+    position: fixed;
+    left: 40px;
+    top: 40px;
+    transform: translateY(-50%);
+    display: flex;
+    z-index: 20;
+  }
+
+  .navbar_logo_sm {
+    display: none;
+  }
+}
+
+.navbar_list {
+  height: 100%;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.navbar_list_link {
+  padding: 0 10px;
+  height: 100%;
+  align-items: center;
+  display: flex;
+}
+
+.navbar_dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--dark);
+  transform: translateY(200%) translateX(-50%);
+  position: absolute;
+  transition: 0.5s cubic-bezier(0.97, 0, 0.43, 1.27);
+}
+
+.navbar_link {
+  text-decoration: none;
+  height: 100%;
+  display: block;
+  color: var(--text-light);
+  z-index: 2;
+  mix-blend-mode: difference;
+}
+
+.expand_dot {
+  animation: expand_dot 0.25s ease-in-out;
+}
+
+@keyframes expand_dot {
+  0% {
+    transform: translateX(-50%) translateY(0%);
+  }
+
+  100% {
+    width: 80px;
+    height: 80px;
+    opacity: 0;
+    transform: translateX(-50%) translateY(0%);
+  }
+}
+
+//////////////////
+///  NAIK LOGO  //
+//////////////////
+
+.naik_logo_N {
+  animation: show_logo_N ease-in-out 2s;
+}
+
+@keyframes show_logo_N {
+  0% {
+    opacity: 0;
+    transform: translateX(200%) rotateY(-90deg);
+  }
+
+  40% {
+    opacity: 1;
+    transform: translateX(200%);
+  }
+}
+
+.naik_logo_A {
+  animation: show_logo_A ease-in-out 2s;
+}
+
+@keyframes show_logo_A {
+  0% {
+    opacity: 0;
+  }
+
+  75% {
+    opacity: 0;
+  }
+}
+
+.naik_logo_I {
+  animation: show_logo_I ease-in-out 2s;
+}
+
+@keyframes show_logo_I {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+
+  65% {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+}
+
+.naik_logo_K {
+  animation: show_logo_K ease-in-out 2s;
+}
+
+@keyframes show_logo_K {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  50% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}

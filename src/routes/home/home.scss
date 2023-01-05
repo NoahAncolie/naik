@@ -1,0 +1,156 @@
+///////////////////////
+///     HERO        ///
+///////////////////////
+
+.home_hero {
+  width: 100vw;
+  height: 70vh;
+  min-height: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+.home_hero img {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  bottom: -100px;
+  left: 0;
+}
+
+.hero_title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--text-light);
+  border-bottom: 1px solid transparent;
+  overflow: hidden;
+  transition: ease-in-out 0.5s;
+  animation: hero_title_border_bottom_light 1s cubic-bezier(.58,.2,.37,1.35);
+}
+
+.hero_title h1 {
+  font-size: 6vw;
+  transition: ease-in-out 0.5s;
+  animation: hero_title_slide_in 1s cubic-bezier(.58,.2,.37,1.35);
+  padding-bottom: 10px;
+  text-shadow: 0 3px 10px var(--shadow);
+}
+
+@keyframes hero_title_slide_in {
+    0% {
+        transform: translateY(100%);
+    }
+
+    5% {
+        transform: translateY(100%);
+    }
+}
+
+@keyframes hero_title_border_bottom_light {
+    50% {
+        border-color: #ffffff;
+    }
+}
+
+/////////////////////////
+///     NOVELTY       ///
+/////////////////////////
+
+.novelty_slide_container{
+    display: flex;
+    overflow-y: auto;
+    padding: 10vh 5vw;
+    scrollbar-color: transparent transparent;
+}
+
+.novelty_title_container {
+    border-top: 4px solid var(--dark);
+    width: calc(100%);
+    position: relative;
+    box-shadow: 0 -1px 10px var(--shadow);
+}
+
+.novelty_title_container h2 {
+    position: absolute;
+    background-color: var(--light);
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    padding: 10px 20px;
+}
+
+//////////////////////////
+///     ALL SHOES      ///
+//////////////////////////
+
+.second_hero {
+    margin: calc(100px - 10vh) 0 100px 0;
+    overflow: hidden;
+}
+
+#second_hero_title {
+    font-size: 3vw;
+    transition: 0.8s ease-in-out;
+}
+
+.all_products_title_container {
+    border-top: 4px solid var(--dark);
+    width: calc(50vw);
+    position: relative;
+    margin:0 25vw;
+}
+
+.all_products_title_container h2 {
+    position: absolute;
+    background-color: var(--light);
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    padding: 0px 20px;
+}
+
+
+
+@media screen and (max-width: 900px) {
+    .all_products_container {
+        margin: 50px 5vw;
+        display: grid;
+        grid-template-columns: auto;
+        row-gap: 12px;
+    }
+  }
+  
+  @media screen and (min-width: 900px) {
+    .all_products_container {
+        margin: 50px 0;
+        padding: 0px 10vw;
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+  }
+
+//////////////////////////
+///     DISCOUNT       ///
+//////////////////////////
+
+.discount_hero {
+    margin: 100px 0;
+    border-top: 2px solid var(--dark);
+    border-bottom: 2px solid var(--dark);
+    display: flex;
+    overflow: hidden;
+}
+
+.discount_hero_title {
+    font-size: 4vh;
+    animation: slide 15s linear infinite;
+}
+
+@keyframes slide {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-1500px, 0, 0); /* The image width */
+    }
+  }

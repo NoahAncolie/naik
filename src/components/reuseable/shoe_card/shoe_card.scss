@@ -1,0 +1,84 @@
+.shoe_card_stage {
+    perspective: 1600px;
+    perspective-origin: 50% -50%;
+    -webkit-perspective-origin: 50% -50%;
+}
+
+.new_shoe_card {
+    position: relative;
+    transform-style: preserve-3d;
+    width: 45vh;
+    height: 45vh;
+    max-width: calc(90vw - 20px);
+    max-height: calc(90vw - 20px);;
+    display: block;
+    margin-right: 40px;
+    transition: 0.5s ease-in-out;
+    box-shadow: 0 0 0 var(--shadow);
+}
+
+.new_shoe_card:hover {
+    transform: rotateX(20deg) rotateY(-10deg) translateZ(20px);
+    box-shadow: 10px 5px 20px var(--shadow);
+}
+
+.new_shoe_card:hover .shoe_card_name {
+    transform: translateX(-5px) translateY(-5px);
+    text-shadow: 10px 5px 5px #ffffffad, 5px 2.5px 5px #000000ad;
+}
+
+.new_shoe_card:hover .shoe_card_price {
+    transform: translateX(-5px) translateY(-5px);
+    text-shadow: 10px 5px 5px #ffffffad, 5px 2.5px 5px #000000ad;
+}
+
+.new_shoe_card:hover::after {
+    opacity: 0.3;
+    transform: translateX(-55%) translateY(-55%);
+    text-shadow: 10px 5px 5px #ffffff55, 5px 2.5px 5px #00000055;
+}
+
+.new_shoe_card::after {
+    content:"voir";
+    position: absolute;
+    color: var(--light);
+    font-size: 2rem;
+    width: fit-content;
+    transform: translateX(-50%) translateY(-50%);
+    top: 50%;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+}
+
+.new_shoe_card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.shoe_card_price {
+    text-decoration: none;
+    position: absolute;
+    display: block;
+    border-radius: 5px;
+    color: var(--light);
+    top: 20px;
+    left: 20px;
+    text-shadow: 0 0 0 var(--shadow);
+    transition: 0.5s ease-in-out;
+}
+
+.shoe_card_name {
+    text-decoration: none;
+    position: absolute;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--light);
+    bottom: 10px;
+    right: 10px;
+    text-shadow: 0 0 0 var(--shadow);
+    transition: 0.5s ease-in-out;
+}
+

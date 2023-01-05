@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { Navbar } from "./components/fix/navigation/navbar";
+import { Home } from "./routes/home/home";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+interface AppProps {}
+
+interface AppState {
+  displayed: boolean;
 }
 
-export default App;
+export class App extends React.Component<AppProps, AppState> {
+  constructor(props: AppProps) {
+    super(props);
+    this.state = {
+      displayed: true,
+    };
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ displayed: false });
+    }, 2000);
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Navbar />
+        <Home />
+      </div>
+    );
+  }
+}

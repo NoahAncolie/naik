@@ -1,0 +1,33 @@
+:root {
+  --dark: #191919;
+  --light: #f1f1f1;
+  --secondary: rgb(0, 153, 255);
+  --shadow: #19191970;
+  --shadow_light : #f1f1f170;
+  --text-main : #191919;
+  --text-light : #f1f1f1;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: var(--light);
+  color: var(--dark);
+}
+
+.App {
+  min-width: 100vw;
+  min-height: 100vh
+}
