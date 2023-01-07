@@ -7,13 +7,16 @@ import shoe_3 from "../../assets/images/shoes/smokey_naik_behind.png";
 import shoe_4 from "../../assets/images/shoes/colored_naik.png";
 import shoe_5 from "../../assets/images/shoes/orange_naik.png";
 import shoe_6 from "../../assets/images/shoes/ice_naik.png";
+import shoe_7 from "../../assets/images/shoes/smokey_naik.png";
 import { NewShoeCard } from "../../components/reuseable/shoe_card/new_shoe_card";
 import { ShoeCategory } from "../../components/reuseable/shoe_category.tsx/shoe_category";
+import { RunningBanner } from "../../components/reuseable/running_banner/running_banner";
 
 interface HomeProps {}
 
 interface HomeState {
   show_hero_2: boolean;
+  link_shoe_picture: string;
 }
 
 export class Home extends React.Component<HomeProps, HomeState> {
@@ -21,6 +24,7 @@ export class Home extends React.Component<HomeProps, HomeState> {
     super(props);
     this.state = {
       show_hero_2: false,
+      link_shoe_picture: shoe_2,
     };
 
     this.callbackFunction = this.callbackFunction.bind(this);
@@ -51,7 +55,7 @@ export class Home extends React.Component<HomeProps, HomeState> {
         </div>
         <section id="#novelty">
           <div className="novelty_title_container">
-            <h2>NEW PRODUCTS</h2>
+            <h2>TRENDING SHOES</h2>
           </div>
           <div className="novelty_slide_container">
             <NewShoeCard
@@ -101,7 +105,7 @@ export class Home extends React.Component<HomeProps, HomeState> {
             </h2>
           </div>
           <div className="all_products_title_container">
-            <h2>ALL PRODUCTS</h2>
+            <h2>CATEGORIES</h2>
           </div>
           <div className="all_products_container">
             <ShoeCategory
@@ -110,39 +114,97 @@ export class Home extends React.Component<HomeProps, HomeState> {
               category_name="Sport"
               link_url="#hello world"
             />
-            <ShoeCategory
-              img_url={shoe_5}
-              img_alt="Two"
-              category_name="City"
-              link_url="#hello world"
-            />
+
             <ShoeCategory
               img_url={shoe_6}
               img_alt="Two"
               category_name="Outside"
               link_url="#hello world"
             />
+
+            <ShoeCategory
+              img_url={shoe_5}
+              img_alt="Two"
+              category_name="Iconic"
+              link_url="#hello world"
+            />
           </div>
         </section>
 
         <section>
-          <div className="discount_hero">
-            <h2 className="discount_hero_title discount_1">DISCOUNT&nbsp;&#9679;&nbsp;</h2>
-            <h2 className="discount_hero_title discount_1">DISCOUNT&nbsp;&#9679;&nbsp;</h2>
-            <h2 className="discount_hero_title discount_1">DISCOUNT&nbsp;&#9679;&nbsp;</h2>
-            <h2 className="discount_hero_title discount_1">DISCOUNT&nbsp;&#9679;&nbsp;</h2>
-            <h2 className="discount_hero_title discount_1">DISCOUNT&nbsp;&#9679;&nbsp;</h2>
-            <h2 className="discount_hero_title discount_1">DISCOUNT&nbsp;&#9679;&nbsp;</h2>
-            <h2 className="discount_hero_title discount_1">DISCOUNT&nbsp;&#9679;&nbsp;</h2>
-            <h2 className="discount_hero_title discount_1">DISCOUNT&nbsp;&#9679;&nbsp;</h2>
-            <h2 className="discount_hero_title discount_1">DISCOUNT&nbsp;&#9679;&nbsp;</h2>
-            <h2 className="discount_hero_title discount_1">DISCOUNT&nbsp;&#9679;&nbsp;</h2>
-            <h2 className="discount_hero_title discount_1">DISCOUNT&nbsp;&#9679;&nbsp;</h2>
-            <h2 className="discount_hero_title discount_1">DISCOUNT&nbsp;&#9679;&nbsp;</h2>
-            <h2 className="discount_hero_title discount_1">DISCOUNT&nbsp;&#9679;&nbsp;</h2>
-            <h2 className="discount_hero_title discount_1">DISCOUNT&nbsp;&#9679;&nbsp;</h2>
-            <h2 className="discount_hero_title discount_1">DISCOUNT&nbsp;&#9679;&nbsp;</h2>
-            <h2 className="discount_hero_title discount_1">DISCOUNT&nbsp;&#9679;&nbsp;</h2>
+          <RunningBanner running_text="NEW&nbsp;ARRIVAL" />
+          <ul
+            className="comming_shoes"
+            onMouseEnter={() => {
+              document
+                .getElementById("comming_picture")
+                ?.classList.add("comming_picture_full");
+            }}
+            onMouseLeave={() => {
+                document
+                .getElementById("comming_picture")
+                ?.classList.remove("comming_picture_full");
+            }}
+          >
+            <a href="#comming_shoe">
+              <li
+                className="comming_shoe_link"
+                onMouseEnter={() => {
+                  this.setState({ link_shoe_picture: shoe_2 });
+                }}
+              >
+                Phantom
+              </li>
+            </a>
+            <a href="#comming_shoe">
+              <li
+                className="comming_shoe_link"
+                onMouseEnter={() => {
+                  this.setState({ link_shoe_picture: shoe_4 });
+                }}
+              >
+                Urban Run
+              </li>
+            </a>
+            <a href="#comming_shoe">
+              <li
+                className="comming_shoe_link"
+                onMouseEnter={() => {
+                  this.setState({ link_shoe_picture: shoe_7 });
+                }}
+              >
+                Spear Mx7
+              </li>
+            </a>
+            <div className="comming_picture" id="comming_picture">
+              <img src={this.state.link_shoe_picture} alt="shoe-for" />
+            </div>
+          </ul>
+          <RunningBanner running_text="NEW&nbsp;ARRIVAL" />
+        </section>
+
+        <section>
+          <div className="more_grid">
+            <a href="#hello" className="more_gridchild_1">
+              <img src={shoe_7} alt="shoe" />
+              <div className="more_blur"></div>
+              <p className="more_title">Spring 2022</p>
+            </a>
+            <a href="#hello" className="more_gridchild_2">
+              <img src={shoe_5} alt="shoe" />
+              <div className="more_blur"></div>
+              <p className="more_title">1987 Remaster</p>
+            </a>
+            <a href="#hello" className="more_gridchild_3">
+              <img src={shoe_1} alt="shoe" />
+              <div className="more_blur"></div>
+              <p className="more_title">Futuristic</p>
+            </a>
+            <a href="#hello" className="more_gridchild_4">
+              <img src={shoe_3} alt="shoe" />
+              <div className="more_blur"></div>
+              <p className="more_title">Discount</p>
+            </a>
           </div>
         </section>
       </div>

@@ -16,12 +16,27 @@
   }
 
   .shoe_category_element img {
+    transform-style: preserve-3d;
     position: absolute;
     left: 0;
     min-height: 100%;
     min-width: 100%;
     transform: translateX(-20%) translateY(-50%) !important;
   }
+
+  .shoe_category_element img {
+    position: absolute;
+    left: 0;
+    min-height: 100%;
+    min-width: 100%;
+    transform: translateX(-20%);
+  }
+
+  .shoe_category_stage a:hover .shoe_category_element{
+    transform: rotateY(10deg) translateZ(20px);
+    box-shadow: -10px 20px 20px var(--shadow);
+  }
+  
 }
 
 @media screen and (min-width: 900px) {
@@ -34,14 +49,19 @@
     overflow: hidden;
     transition: 0.5s ease-in-out;
   }
-}
 
-.shoe_category_element img {
-  position: absolute;
-  left: 0;
-  min-height: 100%;
-  min-width: 100%;
-  transform: translateX(-20%);
+  .shoe_category_element img {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    min-width: 100%;
+    transform: translateX(-20%);
+  }
+
+  .shoe_category_stage a:hover .shoe_category_element{
+    transform: translateY(-10px) rotateY(10deg) translateZ(20px);
+    box-shadow: 0px 20px 20px var(--shadow);
+  }
 }
 
 .shoe_category_name {
@@ -63,6 +83,13 @@
   transition: 0.5s ease-in-out;
 }
 
+.shoe_category_stage a {
+    display: block;
+    transform-style: preserve-3d;
+    transition: 0.5s ease-in-out;
+}
+
 .shoe_category_stage a:hover .shoe_category_nb {
+    padding: 0;
   opacity: 0;
 }
